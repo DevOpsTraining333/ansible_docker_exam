@@ -1,0 +1,81 @@
+---
+- name: Install docker
+  hosts: nodejs
+  become: true
+
+  tasks:
+    - name: Install yum utils
+      yum:
+        name: yum-utils
+        state: latest
+
+    - name: Install device-mapper-persistent-data
+      yum:
+        name: device-mapper-persistent-data
+        state: latest
+
+    - name: Install lvm2
+      yum:
+        name: lvm2
+        state: latest
+
+    - name: Add Docker repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docer-ce.repo
+      become: yes
+
+    - name: Enable Docker Edge repo
+      ini_file:
+        dest: /etc/yum.repos.d/docer-ce.repo
+        section: 'docker-ce-edge'
+        option: enabled
+        value: 0
+      become: yes
+
+    - name: Enable Docker Test repo
+      ini_file:
+        dest: /etc/yum.repos.d/docer-ce.repo
+        section: 'docker-ce-test'
+        option: enabled
+        value: 0
+      become: yes
+
+    - name: Install Docker
+      package:
+        name: docker-ce
+        state: latest
+      become: yes
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+      become: yes
+
+    - name: Add user exam to docker group
+      user:
+        name: exam
+        groups: docker
+        append: yes
+      become: yes
+
+    - name: copy Dockerfile to /home/exam
+      copy:
+        src: /home/exam/Dockerfile
+        dest: /home/exam/Dockerfile
+
+    - name: copy index_docker.js to /home/exam
+      copy:
+        src: /home/exam/index_docker.js
+        dest: /home/exam/index_docker.js
+
+    - name: stop and remove all previous containers
+      shell: if [ $(docker ps | wc -l ) -gt 1 ]; then docker stop $(docker ps -a -q); docker rm $(docker ps -a -q);fi
+
+    - name: create docker image
+      shell: docker build -t exam/nodeapp .
+
+    - name: run docker image
+      shell: docker run -d -p 8070:8070 --name exam_container exam/nodeapp node index_docker.js

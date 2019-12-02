@@ -7,6 +7,11 @@
   - name: get nodejs repository
     shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 
+  - firewalld:
+      port: 8080/tcp
+      permanent: yes
+      state: disabled
+
   - name: install nodejs
     yum:
       name: nodejs
