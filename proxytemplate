@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-        {% for string in proxy_strings %}{{string}} /{{hostservice}} http://{{hostname}}:{{hostport}}/
+        {% for string in proxy_strings %}{{string}} /{{hostservice}} http://{{hostvars['ansible_nodejs']['ansible_host']}}:{{hostport}}/
         {% endfor %}
 
 </VirtualHost>

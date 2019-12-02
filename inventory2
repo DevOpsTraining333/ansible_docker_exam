@@ -2,7 +2,7 @@
 192.168.56.217
 
 [nodejs]
-192.168.56.218
+ansible_nodejs ansible_host=192.168.56.218
 
 [all:vars]
 ansible_connection=ssh

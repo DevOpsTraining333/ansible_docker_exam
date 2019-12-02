@@ -9,6 +9,8 @@
 ~H
 # Command Line History (newest to oldest):
 :x
+:x!
+:q!
 
 # Search String History (newest to oldest):
 
@@ -53,19 +55,24 @@
 	      enabled: yes
 
 # File marks:
-'0  13  50  ~/httpd_install.yaml
-'1  11  3  ~/nodejs_install.yaml
-'2  17  96  ~/nodejs_install.yaml
-'3  14  5  ~/nodejs_install.yaml
-'4  12  15  ~/nodejs_install.yaml
-'5  75  116  ~/docker_playbook.yaml
-'6  81  94  ~/docker_playbook.yaml
-'7  6  28  ~/index_docker.js
-'8  5  23  ~/Dockerfile
-'9  5  42  ~/node.service
+'0  22  0  ~/httpd_install.yaml
+'1  2  117  ~/proxytemplate
+'2  5  0  ~/inventory2
+'3  13  50  ~/httpd_install.yaml
+'4  11  3  ~/nodejs_install.yaml
+'5  17  96  ~/nodejs_install.yaml
+'6  14  5  ~/nodejs_install.yaml
+'7  12  15  ~/nodejs_install.yaml
+'8  75  116  ~/docker_playbook.yaml
+'9  81  94  ~/docker_playbook.yaml
 
 # Jumplist (newest first):
--'  13  50  ~/httpd_install.yaml
+-'  22  0  ~/httpd_install.yaml
+-'  13  4  ~/httpd_install.yaml
+-'  2  117  ~/proxytemplate
+-'  5  0  ~/inventory2
+-'  1  0  ~/inventory2
+-'  5  0  ~/proxytemplate
 -'  17  6  ~/httpd_install.yaml
 -'  11  3  ~/nodejs_install.yaml
 -'  17  4  ~/nodejs_install.yaml
@@ -86,49 +93,94 @@
 -'  1  0  ~/node_install.yaml
 -'  6  29  ~/index.js
 -'  1  0  ~/index.js
--'  5  13  ~/proxytemplate
 -'  1  0  ~/proxytemplate
 -'  35  6  ~/httpd_install.yaml
 -'  1  0  ~/httpd_install.yaml
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
 -'  6  29  ~/index.js
 -'  1  0  ~/index.js
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
 -'  31  17  ~/node_install.yaml
 -'  1  0  ~/node_install.yaml
 -'  6  29  ~/index.js
 -'  1  0  ~/index.js
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
 -'  6  29  ~/index.js
 -'  1  0  ~/index.js
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
 -'  31  17  ~/node_install.yaml
 -'  1  0  ~/node_install.yaml
 -'  6  29  ~/index.js
 -'  1  0  ~/index.js
--'  5  13  ~/proxytemplate
--'  1  0  ~/proxytemplate
+-'  11  3  ~/nodejs_install.yaml
+-'  17  4  ~/nodejs_install.yaml
+-'  14  6  ~/nodejs_install.yaml
+-'  12  6  ~/nodejs_install.yaml
+-'  42  6  ~/nodejs_install.yaml
+-'  75  116  ~/docker_playbook.yaml
+-'  81  6  ~/docker_playbook.yaml
+-'  1  0  ~/docker_playbook.yaml
+-'  6  28  ~/index_docker.js
+-'  1  0  ~/index_docker.js
+-'  5  23  ~/Dockerfile
+-'  1  0  ~/Dockerfile
+-'  5  42  ~/node.service
+-'  1  0  ~/node.service
+-'  1  0  ~/nodejs_install.yaml
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  11  3  ~/nodejs_install.yaml
+-'  17  4  ~/nodejs_install.yaml
+-'  14  6  ~/nodejs_install.yaml
+-'  12  6  ~/nodejs_install.yaml
+-'  42  6  ~/nodejs_install.yaml
+-'  75  116  ~/docker_playbook.yaml
+-'  81  6  ~/docker_playbook.yaml
+-'  1  0  ~/docker_playbook.yaml
+-'  6  28  ~/index_docker.js
+-'  1  0  ~/index_docker.js
+-'  5  23  ~/Dockerfile
+-'  1  0  ~/Dockerfile
+-'  5  42  ~/node.service
+-'  1  0  ~/node.service
+-'  1  0  ~/nodejs_install.yaml
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  5  0  ~/inventory2
+-'  2  117  ~/proxytemplate
+-'  5  0  ~/inventory2
 
 # History of marks within files (newest to oldest):
 
 > ~/httpd_install.yaml
-	"	13	50
+	"	22	0
 	^	13	51
 	.	13	50
 	+	35	21
 	+	15	0
 	+	12	33
 	+	13	50
+
+> ~/proxytemplate
+	"	2	117
+	^	2	118
+	.	2	117
+	+	5	7
+	+	2	117
+
+> ~/inventory2
+	"	5	0
+	^	5	8
+	.	5	7
+	+	5	7
 
 > ~/nodejs_install.yaml
 	"	11	3
@@ -186,9 +238,3 @@
 	^	6	30
 	.	6	3
 	+	6	3
-
-> ~/proxytemplate
-	"	5	13
-	^	5	14
-	.	5	7
-	+	5	7
