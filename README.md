@@ -17,6 +17,10 @@ Switch to exam user and generate public-private key
      su exam
      ssh-keygen
      
+Install Ansible as root
+
+     su root
+     yum install -y ansible
 
 
 
