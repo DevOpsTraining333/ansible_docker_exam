@@ -41,3 +41,16 @@ Switch to exam user and create the final inventory2 file so exam is the default 
 
      vi inventory2
      su exam
+     
+Create and run a playbook to install httpd on ansible-web
+
+     vi httpd_install.yaml
+     ansible-playbook -i inventory2 httpd_install.yaml
+     
+
+
+
+
+
+
+     
