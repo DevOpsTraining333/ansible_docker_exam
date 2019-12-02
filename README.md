@@ -1,4 +1,4 @@
-# ansible_docker_exam Readme (todo)
+nsible_docker_exam Readme (todo)
 
 Create 3 virtual hosts: ansible-control (192.168.56.216), ansible-web (192.168.56.217), ansible-node (192.168.56.218)
 Memory: 1024Mb enough.
@@ -26,4 +26,3 @@ Create the first inventory file to /home/exam with root as ansible user
 
      cd /home/exam
      vi inventory1
-     
