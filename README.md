@@ -50,6 +50,15 @@ Create and run a playbook to install httpd on ansible-web
 Also use a proxytemplate file for reverse proxy on the web server
      
      vi proxytemplate
+     
+We need a playbook that installs nodejs and an index file for nodejs. We also need a unit file so nodejs becomes a service
+
+     vi index.js
+     vi nodejs_install.yaml
+     vi node.service
+     ansible-playbook -i inventory2 nodejs_install.yaml
+     
+     
 
 
 
