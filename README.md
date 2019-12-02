@@ -36,3 +36,8 @@ Create (and run as root) the first yaml file which will add exam users on the ot
 
      vi create_user.yaml
      ansible-playbook -i inventory1 -k create_user.yaml
+     
+Switch to exam user and create the final inventory2 file so exam is the default ansible user
+
+     vi inventory2
+     su exam
