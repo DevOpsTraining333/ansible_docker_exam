@@ -6,11 +6,16 @@
 
   - name: get nodejs repository
     shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
-
-  - firewalld:
+  
+  - name: enable 8080 port on firewall <---- does not work
+    firewalld:
       port: 8080/tcp
       permanent: yes
-      state: disabled
+      state: enabled
+
+  - name: Enable firewalld and add 8080 port
+    shell: sudo systemctl enable firewalld --now; sudo firewall-cmd --zone=public --add-port=8080/tcp
+  
 
   - name: install nodejs
     yum:
