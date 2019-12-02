@@ -26,3 +26,13 @@ Create the first inventory file to /home/exam with root as ansible user
 
      cd /home/exam
      vi inventory1
+     
+SSH to the other hosts as root so the controller becomes a known host
+
+     ssh root@192.168.56.217
+     ssh root@192.168.56.218
+
+Create (and run as root) the first yaml file which will add exam users on the other hosts
+
+     vi create_user.yaml
+     ansible-playbook -i inventory1 -k create_user.yaml
