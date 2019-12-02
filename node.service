@@ -1,0 +1,5 @@
+[Unit]
+Description=Nodejs unit file
+
+[Service]
+ExecStart=/usr/bin/node /home/exam/index.js

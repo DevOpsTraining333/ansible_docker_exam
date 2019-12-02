@@ -19,13 +19,57 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+""1	LINE	0
+	me: install nodejs on nodejs server
+	  hosts: nodejs
+	  become: true
+	  tasks:
+	
+	  - name: get nodejs repository
+	    shell: curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+	
+	  - name: install nodejs
+	    yum:
+	      name: nodejs
+	      state: latest
+	
+	  - name: copy index.js from my computer to the nodejs server
+	    copy:
+	      src: /home/exam/index.js
+	      dest: /home/exam/index.js
+	
+	  - name: copy nodejs unit file
+	    copy:
+	      src: /home/exam/node.service
+	      dest: /etc/systemd/system/node.service
+	  - name: just force systemd to reread configs (2.4 and above)
+	    systemd:
+	      daemon_reload: yes
+	
+	  - name: ensure nodejs is running and enabled
+	    service:
+	      name: node
+	      state: started
+	      enabled: yes
 
 # File marks:
-'0  5  13  ~/proxytemplate
-'1  13  6  ~/httpd_install.yaml
-'2  31  21  ~/httpd_install.yaml
+'0  5  42  ~/node.service
+'1  32  19  ~/nodejs_install.yaml
+'2  31  17  ~/node_install.yaml
+'3  6  29  ~/index.js
+'4  5  13  ~/proxytemplate
+'5  13  6  ~/httpd_install.yaml
+'6  31  21  ~/httpd_install.yaml
 
 # Jumplist (newest first):
+-'  5  42  ~/node.service
+-'  1  0  ~/node.service
+-'  32  19  ~/nodejs_install.yaml
+-'  1  0  ~/nodejs_install.yaml
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
 -'  5  13  ~/proxytemplate
 -'  1  0  ~/proxytemplate
 -'  13  6  ~/httpd_install.yaml
@@ -34,8 +78,116 @@
 -'  13  6  ~/httpd_install.yaml
 -'  31  6  ~/httpd_install.yaml
 -'  1  0  ~/httpd_install.yaml
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  32  19  ~/nodejs_install.yaml
+-'  1  0  ~/nodejs_install.yaml
+-'  31  17  ~/node_install.yaml
+-'  1  0  ~/node_install.yaml
+-'  6  29  ~/index.js
+-'  1  0  ~/index.js
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
+-'  5  13  ~/proxytemplate
+-'  1  0  ~/proxytemplate
+-'  13  6  ~/httpd_install.yaml
+-'  31  6  ~/httpd_install.yaml
+-'  1  0  ~/httpd_install.yaml
 
 # History of marks within files (newest to oldest):
+
+> ~/node.service
+	"	5	42
+	^	5	43
+	.	5	40
+	+	5	40
+
+> ~/nodejs_install.yaml
+	"	32	19
+	^	32	20
+	.	32	0
+	+	1	3
+	+	32	0
+
+> ~/node_install.yaml
+	"	31	17
+	^	31	18
+	.	31	18
+	+	31	18
+
+> ~/index.js
+	"	6	29
+	^	6	30
+	.	6	3
+	+	6	3
 
 > ~/proxytemplate
 	"	5	13
