@@ -1,0 +1,5 @@
+<VirtualHost *:80>
+        {% for string in proxy_strings %}{{string}} /{{hostservice}} http://{{hostname}}:{{hostport}}/
+        {% endfor %}
+
+</VirtualHost>
