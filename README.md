@@ -47,6 +47,9 @@ Create and run a playbook to install httpd on ansible-web
      vi httpd_install.yaml
      ansible-playbook -i inventory2 httpd_install.yaml
      
+Also use a proxytemplate file for reverse proxy on the web server
+     
+     vi proxytemplate
 
 
 
