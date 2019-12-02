@@ -21,6 +21,12 @@ Install Ansible as root
 
      su root
      yum install -y ansible
+     
+Create the first inventory file with root as ansible user
+
+     vi inventory1
+     
+
 
 
 
