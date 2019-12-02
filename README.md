@@ -11,6 +11,10 @@ Create exam user with password 000000 and home folder /home/exam:
      passwd exam
      usermod -aG wheel exam
      
+Switch to exam user and generate public-private key
+     su exam
+     ssh-keygen
+     
 
 
 
