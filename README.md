@@ -56,7 +56,7 @@ We need a playbook that installs nodejs and an index file for nodejs. We also ne
      vi index.js
      vi nodejs_install.yaml
      vi node.service
-     ansible-playbook -i inventory2 nodejs_install
+     ansible-playbook -i inventory2 nodejs_install.yaml
      
      
 
