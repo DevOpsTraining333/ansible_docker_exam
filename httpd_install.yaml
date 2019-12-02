@@ -8,6 +8,10 @@
     hostport: 8080
     hostservice: node
   tasks:
+
+  - name: change SELinux settings
+    shell: setsebool -P httpd_can_network_connect=1
+
   - name: Install apache packages
     yum:
       name: httpd
