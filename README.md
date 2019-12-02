@@ -5,6 +5,13 @@ Memory: 1024Mb enough.
 
 SSH into Ansible controller: 
      ssh root@192.168.56.216
+     
+Create exam user with password 000000 and home folder /home/exam:
+     useradd exam -d /home/exam
+     passwd exam
+     usermod -aG wheel exam
+     
+
 
 
 
